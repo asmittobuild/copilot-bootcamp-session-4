@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "username": "tech.lead",
+      "display_name": "Taylor Practice Lead",
+      "email": "taylor.lead@slalom.com",
+      "role": "practice_lead",
+      "practice_areas": ["Technology"],
+      "permissions": [
+        "manage_capabilities",
+        "approve_registrations",
+        "view_audit_logs",
+        "manage_capacity"
+      ],
+      "salt": "slalom-tech-lead-salt",
+      "password_hash": "f53025ca9b44df94bf2858ba3181c2ac77a4e907b344de207cf00f481a82a2d1"
+    },
+    {
+      "username": "strategy.lead",
+      "display_name": "Morgan Strategy Lead",
+      "email": "morgan.lead@slalom.com",
+      "role": "practice_lead",
+      "practice_areas": ["Strategy", "Operations"],
+      "permissions": [
+        "manage_capabilities",
+        "approve_registrations",
+        "view_audit_logs",
+        "manage_capacity"
+      ],
+      "salt": "slalom-strategy-lead-salt",
+      "password_hash": "7825165002dba7819d2bdb27df88243f1b054b7af684071834630857776a8f56"
+    },
+    {
+      "username": "alex.consultant",
+      "display_name": "Alex Consultant",
+      "email": "alex.consultant@slalom.com",
+      "role": "consultant",
+      "practice_areas": ["Technology"],
+      "permissions": [
+        "view_capabilities",
+        "request_registration"
+      ],
+      "salt": "slalom-consultant-salt",
+      "password_hash": "b998d4516d78ff925c122b9cd6f0f8adee3fd011e8bd90f28d266351a2c91c94"
+    }
+  ]
+}

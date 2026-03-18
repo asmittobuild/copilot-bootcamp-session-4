@@ -9,9 +9,12 @@ A FastAPI application that enables Slalom consultants to register their capabili
 ## Features
 
 - View all available consulting capabilities
-- Register consultant expertise and availability
+- Secure sign-in for practice leads and consultants
+- Register consultant expertise and availability with role-based workflows
 - Track skill levels and certifications
 - Manage capability capacity and team assignments
+- Practice lead approval workflow for consultant self-registration requests
+- Audit log API for capability changes (practice lead only)
 
 ## Getting Started
 
@@ -37,8 +40,21 @@ A FastAPI application that enables Slalom consultants to register their capabili
 | Method | Endpoint                                                          | Description                                                         |
 | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | GET    | `/capabilities`                                                   | Get all capabilities with details and current consultant assignments |
-| POST   | `/capabilities/{capability_name}/register?email=consultant@slalom.com` | Register consultant for a capability                     |
-| DELETE | `/capabilities/{capability_name}/unregister?email=consultant@slalom.com` | Unregister consultant from a capability              |
+| POST   | `/auth/login`                                                     | Sign in and receive a bearer access token                           |
+| GET    | `/auth/me`                                                        | Get current signed-in user profile                                  |
+| POST   | `/capabilities/{capability_name}/register?email=consultant@slalom.com` | Practice lead direct register or consultant self-request            |
+| POST   | `/capabilities/{capability_name}/approve?email=consultant@slalom.com` | Practice lead approval endpoint for pending requests                |
+| DELETE | `/capabilities/{capability_name}/unregister?email=consultant@slalom.com` | Practice lead unregister endpoint                                  |
+| GET    | `/audit-logs`                                                     | View capability audit trail (practice lead only)                    |
+
+## Demo Credentials
+
+Credentials are stored in `practice_leads.json` with salted password hashes.
+
+- Practice lead: `tech.lead` / `LeadTech!2026`
+- Consultant: `alex.consultant` / `Consultant!2026`
+
+Use the "Sign In" button in the header to authenticate.
 
 ## Data Model
 
